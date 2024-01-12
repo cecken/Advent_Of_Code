@@ -11,13 +11,16 @@ def get_input() -> str:
 def get_floor(input_str):
     floor = 0
     first_down = len(input_str)+1
+    check = True
     for i, char in enumerate(input_str):
         if char == '(':
             floor += 1
         elif char == ')':
             floor -= 1
-            if i < first_down:
+        if check:
+            if floor < 0:
                 first_down = i
+                check = False
     return floor, first_down + 1
 
 
