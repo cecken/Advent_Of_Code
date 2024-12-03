@@ -25,6 +25,7 @@ def main():
                 safe += 1
             else:
                 for i in range(len(levels)):
+                    ### Brute Forcing. This is inelegant, but quick
                     new_levels = levels.copy()
                     new_levels.pop(i)
                     if check_safe(new_levels):
